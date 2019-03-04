@@ -1,0 +1,126 @@
+body {
+	font-size: 15px; 
+	margin: 0px; 
+} 
+
+/* 방문하지 않은 링크 */ 
+a:link {
+	color: black; 
+} 
+/* 방문한 링크 */ 
+a:visited {
+	color: black; 
+} 
+/* mouse over된 링크 */ 
+a:hover {
+	color: red; 
+} 
+
+#imageDiv img {
+	width: 100%; 
+}
+
+.evenItem {
+	margin-bottom: 30px; 
+	background-color: rgba(227, 227, 227, 0.5); 
+} 
+
+.oddItem {
+	margin-bottom: 30px; 
+	background-color: white; 
+} 
+
+/* 작은화면. 쉼표로 구분되면 or 와 동일한 의미 */ 
+/* 모바일 모드 */ 
+@media ( max-width: 480px ) {
+	#infoDiv {
+		position: relative; 
+		display: flex; 
+		margin-bottom: 20px; 
+	} 
+	
+	#titleDiv {
+		display: none; 
+	} 
+
+	#imageDiv { 
+	
+	} 
+
+	#descDiv {
+		position: absolute; 
+		bottom: 0px; 
+		left: 0px; 
+		padding: 10px; 
+		background-color: rgba(255, 255, 255, 0.5); 
+	}
+	
+	#itemListDiv {
+		position: static; 
+		width: 100%; 
+	} 
+	
+	#itemListDiv div {
+		padding: 10px; 
+	} 
+	
+	div#title {
+		display: inline-block; 
+		font-weight: bold; 
+		padding-top: 0px; 
+		padding-bottom: 0px; 
+	} 
+	
+	div#pubDate {
+		display: inline-block; 
+		padding-top: 0px; 
+		padding-bottom: 0px; 
+	}
+	
+	div#summary {
+		font-size: 0.9rem;
+	}
+	
+	div#playOut {
+		
+	} 
+} 
+
+/* 나머지 화면 */ 
+@media ( min-width: 481px ) { 
+	#infoDiv {
+		display: table; 
+		padding: 10px; 
+		background-color: mintcream; 
+		margin-bottom: 20px; 
+	} 
+
+	#titleDiv {
+		display: table-cell; 
+		position: absolute;
+		right: 25px; 
+		font-size: 1.2rem; 
+		font-weight: bold; 
+		/* background-color: lightskyblue; */ 
+	}
+	
+	#imageDiv {
+		display: table-cell; 
+		width: 30%; 
+		padding: 0px; 
+		margin: 0px; 
+		vertical-align: top; 
+		/* background-color: yellow;  */ 
+	} 
+	
+	#descDiv {
+		display: table-cell; 
+		height: 100%; 
+		width: 69%; 
+		padding: 10px; 
+		margin: 0px; 
+		vertical-align: bottom; 
+		font-size: 1.2rem; 
+		/* background-color: yellowgreen; */ 
+	} 
+} 
