@@ -34,7 +34,6 @@ export class DebugUtil {
 			eleInfo += ", innerHTML=" + element.innerHTML; 
 			eleInfo += ", textContent=" + element.textContent; 
 		}
- 
 		else {
 			
 		} 

@@ -21,65 +21,83 @@ export class DocWriter {
 		else {
 			let node = document.createElement("img"); 
 			node.setAttribute("src", addr); 
-			node.setAttribute("width", "30%"); 
+			//node.setAttribute("width", "30%"); 
 			tag.append(node); 
 		} 	
 	} 
 
 	writeItem(id, itemId, title, summary, pubDate, guid) {
-		let tag = document.getElementById(id); 
+		let parentNode = document.getElementById(id); 
 		
-		if(tag === undefined || tag === null) {
+		if(parentNode === undefined || parentNode === null) {
 			console.log(`id=${id}, desc=${desc}`); 
 		} 
 		else {
-			// 템플릿 찾고 
-			let template = document.getElementById("itemTemplate"); 
-			// 확인 
-			if (template === undefined || template === null) {
-				console.log(`추가못함 : title=${title}`); 
+			let itemNode = document.createElement("div"); 
+			itemNode.setAttribute("id", "item_" + itemId); 
+			
+			// 홀수 
+			if (itemId & 1) {
+				itemNode.setAttribute("class", "oddItem"); 
 			} 
+			// 짝수 
 			else {
-				// 하위노드 포함해서 복사 
-				let node = template.cloneNode(true); 
-				// id 지정 
-				node.setAttribute("id", "item_" + itemId); 
-				
-				// 하위 노드에 값 꽂기 
-				for(let child of node.children) { 
-					let currentId = child.getAttribute("id"); 
-					
-					switch(currentId) {
-						case "title" : 
-							// 제목 
-							let titleNode = child.children[0]; 
-							titleNode.innerHTML = title; 
-							
-							// 날짜 
-							let dateNode = child.children[1]; 
-							let date = new Date(Date.parse(pubDate)); 
-							let dateStr = ""; 
-							// 문자열로 만들어 붙이기 
-							dateStr += date.getFullYear() + "-";  
-							dateStr += (date.getMonth() + 1) + "-"; 
-							dateStr += date.getDate(); 
-							dateNode.innerText = "  (" + dateStr + ")"; 
-							break; 
-							
-						case "play" : 
-							child.setAttribute("href", guid); 
-							break; 
-							
-						case "summary" : 
-							child.innerText = summary; 
-							break; 
-					} 
-				} 
-				
-				// 추가 
-				tag.append(node); 
+				itemNode.setAttribute("class", "evenItem"); 
 			} 
+			
+			// 새로 만든 노드 추가 
+			parentNode.appendChild(itemNode); 
+			
+			// 제목 
+			let titleNode = document.createElement("div"); 
+			titleNode.setAttribute("id", "title"); 
+			titleNode.innerHTML = title; 
+			itemNode.appendChild(titleNode); 
+			
+			// 발행일 
+			let pubNode = document.createElement("div"); 
+			pubNode.setAttribute("id", "pubDate"); 
+			pubNode.innerText = "(" + this.convertDate(pubDate) + ")"; 
+			itemNode.appendChild(pubNode); 
+			
+			// 요약 
+			let descNode = document.createElement("div"); 
+			descNode.setAttribute("id", "summary");
+			descNode.innerText = summary; 
+			itemNode.appendChild(descNode); 
+			
+			// 재생링크 껍데기 
+			let playOutNode = document.createElement("div"); 
+			playOutNode.setAttribute("id", "playOut"); 
+			itemNode.append(playOutNode); 
+			
+			// 재생링크 
+			let playNode = document.createElement("a"); 
+			playNode.setAttribute("id", "play"); 
+			playNode.setAttribute("href", guid); 
+			playNode.setAttribute("target", "_blank"); 
+			playNode.innerText = "듣기"; 
+			playOutNode.appendChild(playNode); 
 		} 
 	} 
+
+
+	convertDate(value) {
+		if(value === null || value === undefined) {
+			return ""; 
+		} 
+		
+		let date = new Date(Date.parse(value)); 
+		let dateStr = ""; 
+		
+		// 문자열로 만들어 붙이기 
+		dateStr += date.getFullYear() + "-";  
+		dateStr += (date.getMonth() + 1) + "-"; 
+		dateStr += date.getDate(); 
+		
+		
+		return dateStr; 	
+	} 
+
 } 
 

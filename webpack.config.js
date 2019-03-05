@@ -14,10 +14,10 @@ module.exports = {
                 test: /\.js$/,
                 include: path.join(__dirname),
                 exclude: /(node_modules)|(dist)/, 
-		loader : "babel-loader",  
-		resolve: {
-			extensions: ['.js'] 
-		} 
+                loader : "babel-loader",  
+                resolve: {
+                	extensions: ['.js'] 
+                } 
             }
         ]
     }

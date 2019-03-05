@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- 원본 : http://enabler.kbs.co.kr/api/podcast_channel/feed.xml?channel_id=R2016-0125 --> 
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
 <channel>
 <title><![CDATA[와이파이 초한지]]></title>
@@ -29,6 +30,7 @@
 <guid>http://kbspodcastad.kbs.co.kr/cgi-bin/podcast.fcgi/kbsaod/R2016-0125/R2016-0125_S000_20180309_PS-2018034410-01-000_02_M3A30012.mp3</guid>
 <pubDate>Fri, 9 Mar 2018 00:00 +0900</pubDate>
 </item>
+<!-- 
 <item>
 <title><![CDATA[09월 11일, 와이파이 초한지]]></title>
 <itunes:keywords><![CDATA[와이파이초한지]]></itunes:keywords>
@@ -40,6 +42,7 @@
 <guid>http://kbspodcastad.kbs.co.kr/cgi-bin/podcast.fcgi/kbsaod/R2016-0125/R2016-0125_S000_20170911_PS-2017150736-01-000_02_M3A30012.mp3</guid>
 <pubDate>Mon, 11 Sep 2017 00:00 +0900</pubDate>
 </item>
+--> 
 <item>
 <title><![CDATA[특집 와이파이 초한지, 제5부 해하전투]]></title>
 <itunes:keywords><![CDATA[와이파이초한지]]></itunes:keywords>

@@ -1,6 +1,7 @@
 body {
 	font-size: 15px; 
 	margin: 0px; 
+	/* background-color: red; */ 
 } 
 
 /* 방문하지 않은 링크 */ 
@@ -20,14 +21,38 @@ a:hover {
 	width: 100%; 
 }
 
+#itemListDiv div {
+	padding: 10px; 
+} 
+
+#itemListDiv div#title {
+	display: inline-block; 
+	font-weight: bold; 
+	padding-top: 0px; 
+	padding-bottom: 0px; 
+} 
+	
+#itemListDiv div#pubDate {
+	display: inline-block; 
+	padding-top: 0px; 
+	padding-bottom: 0px; 
+}
+
+#itemListDiv div#summary {
+	font-size: 0.85rem;
+}
+
+#itemListDiv div#playOut {
+	display: flex; 
+	justify-content: flex-end; 		
+} 
+
 .evenItem {
-	margin-bottom: 30px; 
 	background-color: rgba(227, 227, 227, 0.5); 
 } 
 
 .oddItem {
-	margin-bottom: 30px; 
-	background-color: white; 
+	background-color: white;
 } 
 
 /* 작은화면. 쉼표로 구분되면 or 와 동일한 의미 */ 
@@ -36,7 +61,7 @@ a:hover {
 	#infoDiv {
 		position: relative; 
 		display: flex; 
-		margin-bottom: 20px; 
+		margin-bottom: 20px;
 	} 
 	
 	#titleDiv {
@@ -59,31 +84,6 @@ a:hover {
 		position: static; 
 		width: 100%; 
 	} 
-	
-	#itemListDiv div {
-		padding: 10px; 
-	} 
-	
-	div#title {
-		display: inline-block; 
-		font-weight: bold; 
-		padding-top: 0px; 
-		padding-bottom: 0px; 
-	} 
-	
-	div#pubDate {
-		display: inline-block; 
-		padding-top: 0px; 
-		padding-bottom: 0px; 
-	}
-	
-	div#summary {
-		font-size: 0.9rem;
-	}
-	
-	div#playOut {
-		
-	} 
 } 
 
 /* 나머지 화면 */ 
@@ -92,7 +92,7 @@ a:hover {
 		display: table; 
 		padding: 10px; 
 		background-color: mintcream; 
-		margin-bottom: 20px; 
+		margin-bottom: 20px;
 	} 
 
 	#titleDiv {
@@ -116,11 +116,10 @@ a:hover {
 	#descDiv {
 		display: table-cell; 
 		height: 100%; 
-		width: 69%; 
+		width: 70%; 
 		padding: 10px; 
 		margin: 0px; 
 		vertical-align: bottom; 
 		font-size: 1.2rem; 
-		/* background-color: yellowgreen; */ 
 	} 
 } 
